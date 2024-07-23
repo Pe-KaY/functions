@@ -6,5 +6,8 @@ function add(a, b) {
   return a + b
 }
 
+function reverse (str) {
+  return str.split('').reverse().join('')
 
-module.exports = {greet,add}
+}
+module.exports = {greet,add, reverse}
