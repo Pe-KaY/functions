@@ -15,8 +15,7 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: ‘npm’ # Cache dependencies
+          node-version: ${{ matrix.node-version }} # Cache dependencies
           cache-dependency-path: package-lock.json # Cache based on lockfile
       - name: Install dependencies
         run: npm install
