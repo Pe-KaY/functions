@@ -1,5 +1,5 @@
 const { test } = require("picomatch")
-const { add, greet, reverse,palindrone } = require("./script")
+const { add, greet, reverse, palindrone } = require("./script")
 const { default: expect } = require("expect")
 
 test("greet user", () => {
@@ -13,6 +13,7 @@ test("add two numbers", () => {
 test("reverse string", () => {
   expect(reverse("hello")).toEqual("olleh")
 })
+
 test("palindrone", () => {
   expect(palindrone("racecar")).toEqual(true)
 })
