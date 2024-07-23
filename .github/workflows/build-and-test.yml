@@ -1,0 +1,24 @@
+name: Build and Test JavaScript Functions
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]  # Test on multiple Node versions
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: ‘npm’             # Cache dependencies
+          cache-dependency-path: package-lock.json # Cache based on lockfile
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test  # Assuming you have Jest, Mocha, or other test framework set up
