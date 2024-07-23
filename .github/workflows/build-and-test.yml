@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]  # Test on multiple Node versions
+        node-version: [14.x, 16.x, 18.x, 20.x] # Test on multiple Node versions
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -16,9 +16,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: ‘npm’             # Cache dependencies
+          cache: ‘npm’ # Cache dependencies
           cache-dependency-path: package-lock.json # Cache based on lockfile
       - name: Install dependencies
         run: npm install
       - name: Run tests
-        run: npm test  # Assuming you have Jest, Mocha, or other test framework set up
+        run: npm test # Assuming you have Jest, Mocha, or other test framework set up
