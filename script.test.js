@@ -1,6 +1,4 @@
-const { test } = require("picomatch")
 const { add, greet, reverse, palindrone } = require("./script")
-const { default: expect } = require("expect")
 
 test("greet user", () => {
   expect(greet("PeeKaY")).toEqual("hello PeeKaY")
