@@ -10,4 +10,8 @@ function reverse (str) {
   return str.split('').reverse().join('')
 
 }
-module.exports = {greet,add, reverse}
+
+function palindrone (str) {
+  return str.split('').reverse().join('') === str
+}
+module.exports = {greet,add, reverse,palindrone}
